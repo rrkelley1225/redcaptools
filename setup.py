@@ -19,7 +19,7 @@ setuptools.setup(
     url="https://github.com/rrkelley1225/redcaptools",
     packages=setuptools.find_packages(),
     install_requires=[
-          'pycurl', 'io', 'urllib', 'json', 'pandas'
+          'pycurl', 'pandas'
     ],
     include_package_data=True,
     zip_safe=False)

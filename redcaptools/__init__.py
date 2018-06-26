@@ -3,7 +3,7 @@ from urllib.parse import urlencode
 import json
 import pandas as pd
 
-def getReport(reportID):
+def getReport(reportID, fileName):
     buf = io.BytesIO()
     data = {
     'token': 'DF0536E309676D419C6E49BAE0CCA7FD',
@@ -24,4 +24,5 @@ def getReport(reportID):
     d = json.loads(buf.getvalue().decode())
     buf.close()
     
-    return pd.DataFrame(d)
+    df = pd.DataFrame(d)
+    df.to_csv(fileName, index=False)
